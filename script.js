@@ -44,15 +44,11 @@ function operate(operator, firstNumber, secondNumber){
 
 
 
-document.querySelectorAll('input').forEach(button =>{
-    button.addEventListener('click', function(e){
-    button.textContent = "";
-    button.textContent+= e.target.value;
-    display.value = button.textContent;
-
+document.querySelectorAll('input').forEach(button=>{
+    button.addEventListener('click', (e)=>{
+        button.textContent += e.target.value;
+        display.value += button.textContent
+        //display.value = button.textContent;
     })
-
-   
 })
-
 //console.log(operate('*', 3, 3));
