@@ -11,39 +11,35 @@
 <body>
     <div id="container">
         <div id="display">
-          <input id="screen" type="text" placeholder="0">
+
+        <input type="text" placeholder="0" id="screen" readonly>
         </div>
-        <div id="functions">
-         <input id="additionFunc" type="button" value="ADD">
-         <input id="sustractionFunc"  type="button" value="Minus">
-         <input id="multiplicationFunc" type="button" value="Multiply">
-         <input id="divisionFunc" type="button" value="Divide">
-        </div>
+        
         <div id="digitRow1">
-            <input type="button" value="7">
-            <input type="button" value="8">
-            <input type="button" value="9">
-            <input type="button" value="X">
+            <input type="button" value="7" class="operand">
+            <input type="button" value="8" class="operand">
+            <input type="button" value="9" class="operand">
+            <input type="button" value="x" class="operator">
 
         </div>
         <div id="digitRow2">
-            <input type="button" value="4">
-            <input type="button" value="5">
-            <input type="button" value="6">
-            <input type="button" value="-">
+            <input type="button" value="4" class="operand">
+            <input type="button" value="5" class="operand">
+            <input type="button" value="6" class="operand">
+            <input type="button" value="-" class="operator">
 
         </div>
         <div id="digitRow3">
-            <input type="button" value="1">
-            <input type="button" value="2">
-            <input type="button" value="3">
-            <input type="button" value="+">
+            <input type="button" value="1" class="operand">
+            <input type="button" value="2" class="operand">
+            <input type="button" value="3" class="operand">
+            <input type="button" value="+" class="operator">
         </div>
         <div id="digitRow4">
-            <input type="button" value="0">
-            <input type="button" value=".">
-            <input type="button" value="/">
-            <input type="button" value="=">
+            <input type="button" value="0" class="operand">
+            <input type="button" value="." class="decimal">
+            <input type="button" value="/" class="operator">
+            <input id="equals" type="button" value="=" class="equals ">
 
         </div>
         <div id="clear">
