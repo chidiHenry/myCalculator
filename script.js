@@ -1,5 +1,4 @@
 
-
 function substract(a,b){
     return parseFloat(a - b);
 
@@ -17,76 +16,72 @@ const adds = function(a, b){
 }
 
 
-
 let display = document.getElementById('screen');
 let clear = document.getElementById('clear');
 let equals = document.getElementById('equals');
+let operand = document.querySelectorAll('.operand');
+let operators = document.querySelectorAll('.operator');
+let firstNum = "";
+let secondNum = "";
+let operator = "";
+let result = "";
 
+operand.forEach(num =>{
+    num.addEventListener('click', (e)=>{
+       if(operator == ""){
+           firstNum += e.target.value;
+           display.value = firstNum;
+           console.log(firstNum);
+       }else{
+           secondNum += e.target.value
+           display.value = secondNum;
+           console.log(secondNum);
+       }
+   
+    })
+   })
 
-
-clear.addEventListener('click', (e)=>{
-    display.value = '';
+   operators.forEach(op=>{
+    op.addEventListener('click', (e)=>{
+        if(e.target.value !== "="){
+            operator = e.target.value;
+            display.value = `${firstNum}  ${operator}`
+            console.log(firstNum);
+            console.log(operator);
+        }else{
+            console.log(secondNum);
+            switch (operator) {
+                case '+':
+                    display.value = parseFloat(firstNum) + parseFloat(secondNum);
+                    console.log(parseFloat(firstNum) + parseFloat(secondNum));
+                    break;
+            
+                default:
+                    break;
+            }
+        }
+       
+    })
 })
 
-let firstNum = "";
-let  secondNum = "";
- let   operator = ""
-    
 
-function operate(secondNum){
-    
-    let numbers = document.querySelectorAll('.operand');
-    let operators = document.querySelectorAll('.operator')
-     numbers.forEach(num=> {
-        num.addEventListener('click', (e)=>{
-          if(operator === ""){
-            firstNum = e.target.value;
-    
-            console.log(firstNum);
-          }else{
-            secondNum = e.target.value;
-            console.log(secondNum);
-          }
-        })
-     })
-    
-     operators.forEach(op=>{
-        op.addEventListener('click', (e)=>{
-            operator = e.target.value;
-            console.log(operator);
-        })
-     })
-    if(operator == '+'){
-        return  adds(firstNum, secondNum);
-    }
-    if(operator == '-'){
-        return substract(firstNum, secondNum)
-    }
-    if(operator == '*'){
-        return multiply(firstNum, secondNum);
-    }
-    if(operator == '/'){
-        return divide(firstNum, secondNum);
-    
-}
-
-
-
-}
-
-equals.addEventListener('click', (e)=>{
-
-    console.log(operate(display.value));
- })
-
-document.querySelectorAll('input').forEach(button=>{
-    button.addEventListener('click', (e)=>{
-        if(button.textContent == ''){
-            button.textContent += e.target.value;
+// document.querySelectorAll('input').forEach(button=>{
+//     button.addEventListener('click', (e)=>{
+//         if(button.textContent == ''){
+//             button.textContent += e.target.value;
            
-        }
-        display.value += button.textContent;
+//         }
+//         display.value += button.textContent;
         
 
-    })
+//     })
+// })
+
+// equals.addEventListener('click', (e)=>{
+//    operate()
+// })
+
+clear.addEventListener('click', (e)=>{
+   // display.value = '';
+   location.reload()
 })
