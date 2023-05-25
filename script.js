@@ -45,7 +45,7 @@ operand.forEach(num =>{
     op.addEventListener('click', (e)=>{
         if(e.target.value !== "="){
             operator = e.target.value;
-            display.value = `${firstNum}  ${operator}`
+            display.value = `${firstNum}${operator}`
             console.log(firstNum);
             console.log(operator);
         }else{
@@ -55,7 +55,18 @@ operand.forEach(num =>{
                     display.value = parseFloat(firstNum) + parseFloat(secondNum);
                     console.log(parseFloat(firstNum) + parseFloat(secondNum));
                     break;
-            
+                    case '-':
+                        display.value = parseFloat(firstNum - secondNum);
+                        console.log(parseFloat(firstNum - secondNum));
+                        break;
+                        case 'x':
+                            display.value = parseFloat(firstNum * secondNum);
+                            console.log(parseFloat(firstNum * secondNum));
+                            break;
+                            case '/':
+                                display.value = parseFloat(firstNum / secondNum);
+                                console.log(parseFloat(firstNum / secondNum));
+                                break;
                 default:
                     break;
             }
